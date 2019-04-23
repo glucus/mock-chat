@@ -22,6 +22,21 @@ class LoginForm extends Component {
         })
     };
 
+
+    handlePhoneInput = (e) => {
+        const value = e.target.value;
+
+        const notNumbers = /\D/;
+
+        if (value.match(notNumbers)) {
+            // console.log('num number input');
+        } else {
+            this.setState({
+                telephone: value
+            });
+        }
+    }
+
     render () {
 
         const {telephone, userName, errors} = this.state;
@@ -38,11 +53,12 @@ class LoginForm extends Component {
                                id="telephone"
                                name="telephone"
                                placeholder="Номер телефона"
-                               onChange={this.handleChange}
+                               onChange={this.handlePhoneInput}
                         />
                     </label>
                     <label htmlFor="userName">
                         <input type="text"
+                               maxLength={30}
                                value={userName}
                                id="userName"
                                name="userName"
