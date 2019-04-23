@@ -5,7 +5,7 @@ class LoginForm extends Component {
     state = {
         telephone: '',
         userName: '',
-        errors: 'aaa'
+        errors: null
     };
 
     submitLoginForm = () => {
