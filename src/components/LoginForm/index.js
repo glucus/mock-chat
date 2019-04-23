@@ -5,7 +5,7 @@ class LoginForm extends Component {
     state = {
         telephone: '',
         userName: '',
-        errors: null
+        errors: 'aaa'
     };
 
     submitLoginForm = () => {
@@ -29,12 +29,15 @@ class LoginForm extends Component {
         return (
             <div className="loginForm">
                 <form onSubmit={this.submitLoginForm}>
+                    <p className="loginForm__heading">
+                        Чтобы начать общение, введите свой номер телефона и имя
+                    </p>
                     <label htmlFor="telephone">
                         <input type="tel"
                                value={telephone}
                                id="telephone"
                                name="telephone"
-                               placeholder=""
+                               placeholder="Номер телефона"
                                onChange={this.handleChange}
                         />
                     </label>
@@ -43,11 +46,14 @@ class LoginForm extends Component {
                                value={userName}
                                id="userName"
                                name="userName"
+                               placeholder="Ваше имя"
                                onChange={this.handleChange}
                         />
                     </label>
                     <button type="submit"
-                            className={(errors === null) ? "submit_btn" : "submit_btn_disabled"}>
+                            className={(errors === null) ? "loginForm_btn" : "loginForm_btn disabled"}
+                            disabled={(errors !== null)}
+                    >
                         Готово
                     </button>
                 </form>
