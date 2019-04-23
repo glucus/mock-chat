@@ -31,3 +31,12 @@
     transform: rotate(360deg);
   }
 }
+
+.loginForm {
+  padding: 10px;
+}
+
+
+.loginForm label {
+  margin-right: 10px;
+}
