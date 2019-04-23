@@ -52,19 +52,19 @@
  }
 
 .loginForm_btn {
-  width: 180px;
+  /*width: 180px;*/
   font-size: 15px;
-  padding: 14px;
+  padding: 0 30px;
+  height: 48px;
+  border-radius: 30px;
+  margin-right: 8px;
+  margin-bottom: 4px;
+
   cursor: pointer;
   border: none;
   outline: none;
-
   color: #fff;
   background-color: #00b956;
-
-  margin-right: 8px;
-  margin-bottom: 4px;
-  border-radius: 24px;
 }
 
 .loginForm_btn:hover,
