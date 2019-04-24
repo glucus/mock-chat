@@ -20,12 +20,6 @@ class Main extends Component {
     })
   };
 
-  toggleChat = (e) => {
-    this.setState({
-      chatOpened: !this.state.chatOpened
-    })
-  };
-
   render() {
     const {chatOpened} = this.state;
 

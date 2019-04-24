@@ -109,12 +109,21 @@
   width: 100%;
 }
 
+.chat__header {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.chat__header__text {
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+
 .chat__closeButton {
   border: none;
   outline: none;
   cursor: pointer;
-  position: absolute;
-  top: 0px;
-  right: 0px;
   background-color: #d8d8d8;
 }

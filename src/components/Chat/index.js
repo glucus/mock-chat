@@ -68,10 +68,15 @@ class Chat extends Component {
         {
           this.props.chatOpened ?
             <div>
-              <button className="chat__closeButton"
-                      onClick={this.props.closeChat}>
-                X
-              </button>
+              <div className="chat__header">
+                <div className="chat__header__text">
+                  Онлайн чат с поддержкой
+                </div>
+                <button className="chat__closeButton"
+                        onClick={this.props.closeChat}>
+                  X
+                </button>
+              </div>
               <ChatMessages messages={this.state.messages}/>
               <form className="chat__currentMessage">
                 <label htmlFor="currentMessage">
