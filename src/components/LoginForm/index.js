@@ -59,7 +59,10 @@ class LoginForm extends Component {
 
     checkErrors = ({telephone, userName}) => {
 
-        const errors = {};
+        const errors = {
+            telephone: '',
+            userName: ''
+        };
 
         if (telephone.length < 1) {
             errors.telephone = 'обязательное поле';
@@ -90,6 +93,7 @@ class LoginForm extends Component {
                                placeholder="Номер телефона"
                                onChange={this.handlePhoneInput}
                                onBlur={this.handleBlur}
+                               required
                         />
                     </label>
                     <label htmlFor="userName">
@@ -101,14 +105,15 @@ class LoginForm extends Component {
                                placeholder="Ваше имя"
                                onChange={this.handleChange}
                                onBlur={this.handleBlur}
+                               required
                         />
                     </label>
                     <button type="submit"
-                            className={(errors === {}) ?
-                                  "loginForm_btn" :
-                                  "loginForm_btn disabled"
+                            className={((errors.userName !=='') || (errors.telephone !== '')) ?
+                                  "loginForm_btn disabled" :
+                                  "loginForm_btn"
                             }
-                            disabled={ errors !== {}}
+                            disabled={(errors.userName !=='') || (errors.telephone !== '')}
                     >
                         Готово
                     </button>
