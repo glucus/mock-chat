@@ -57,7 +57,7 @@ class Chat extends Component {
   };
 
 
-  render() {
+  render(props) {
 
     const {telephone, userName, errors} = this.state;
 
@@ -71,7 +71,7 @@ class Chat extends Component {
 
     return (
       <div>
-        <ChatMessages messages={this.state.messages} />
+        <ChatMessages messages={this.state.messages}/>
         <form className="chat__currentMessage">
           <label htmlFor="currentMessage">
             <textarea

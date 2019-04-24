@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 class LoginForm extends Component {
-
     constructor (props) {
         super(props);
         this.state = {
@@ -11,10 +10,11 @@ class LoginForm extends Component {
         };
     };
 
-    submitLoginForm = () => {
+    submitLoginForm = (e) => {
         console.log('login form submit invoked');
         // call to api passing user id as parameter to create listener;
-        this.props.onLoginSubmit();
+        e.preventDefault();
+        this.props.onLoginSubmit(e);
     };
 
     handleChange = (e) => {

@@ -4,33 +4,41 @@ import Chat from '../Chat';
 
 class Main extends Component {
 
-    state = {
-        chatOpened: false
-    };
+  state = {
+    chatOpened: false
+  };
 
-    openChat = () => {
-        this.setState({
-            chatOpened: true
-        })
-    };
+  openChat = (e) => {
+    this.setState({
+      chatOpened: true
+    })
+  };
 
-    closeChat = () => {
-        this.setState({
-            chatOpened: false
-        })
-    };
+  closeChat = (e) => {
+    this.setState({
+      chatOpened: false
+    })
+  };
 
-render() {
+  toggleChat = (e) => {
+    this.setState({
+      chatOpened: !this.state.chatOpened
+    })
+  };
 
+  render() {
     const {chatOpened} = this.state;
 
     return (
-            <div className="chat">
-                {chatOpened ? <Chat /> : <div className="chat__messages" />}
-                <LoginForm onLoginSubmit={this.openChat} />
-            </div>
-        );
-    }
+      <div className="chat">
+        {chatOpened ?
+          <Chat /> :
+          <div className="chat__messages"/>
+        }
+        <LoginForm onLoginSubmit={this.openChat} />
+      </div>
+    );
+  }
 }
 
 export default Main;
