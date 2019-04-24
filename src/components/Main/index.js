@@ -1,14 +1,33 @@
 import React, {Component} from 'react';
 import LoginForm from '../LoginForm';
+import Chat from '../Chat';
 
 class Main extends Component {
 
-    state = {};
+    state = {
+        chatOpened: false
+    };
 
-    render() {
-        return (
+    openChat = () => {
+        this.setState({
+            chatOpened: true
+        })
+    };
+
+    closeChat = () => {
+        this.setState({
+            chatOpened: false
+        })
+    };
+
+render() {
+
+    const {chatOpened} = this.state;
+
+    return (
             <div className="chat">
-                <LoginForm/>
+                {chatOpened ? <Chat /> : <div className="chat__messages" />}
+                <LoginForm onLoginSubmit={this.openChat} />
             </div>
         );
     }

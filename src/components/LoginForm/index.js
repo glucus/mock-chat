@@ -2,15 +2,19 @@ import React, {Component} from 'react';
 
 class LoginForm extends Component {
 
-    state = {
-        telephone: '',
-        userName: '',
-        errors: null
+    constructor (props) {
+        super(props);
+        this.state = {
+            telephone: '',
+            userName: '',
+            errors: null
+        };
     };
 
     submitLoginForm = () => {
         console.log('login form submit invoked');
         // call to api passing user id as parameter to create listener;
+        this.props.onLoginSubmit();
     };
 
     handleChange = (e) => {
@@ -37,7 +41,7 @@ class LoginForm extends Component {
         }
     }
 
-    render () {
+    render (props) {
 
         const {telephone, userName, errors} = this.state;
 

@@ -76,3 +76,22 @@
 .loginForm_btn.disabled {
   background-color: #d8d8d8;
 }
+
+/* --- */
+.chat__messages {
+  background-color: #d8d8d8;
+  height: 300px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}
+
+.chat__messages__message {
+  background-color: #fff;
+  border-radius: 1em;
+  margin-bottom: 10px;
+}
+
+.chat__currentMessage textarea {
+  padding: 10px;
+  width: 100%;
+}
