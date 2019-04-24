@@ -79,6 +79,7 @@
 
 /* --- */
 .chat__messages {
+  padding: 20px;
   background-color: #d8d8d8;
   height: 300px;
   overflow-y: scroll;
@@ -86,9 +87,21 @@
 }
 
 .chat__messages__message {
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.chat__messages__operatorMessage {
+  margin-bottom: 10px;
+  text-align: left;
+  color: #00b956;
+}
+
+.message__text {
+  display: inline-block;
+  padding: 5px 20px;
   background-color: #fff;
   border-radius: 1em;
-  margin-bottom: 10px;
 }
 
 .chat__currentMessage textarea {
@@ -100,5 +113,8 @@
   border: none;
   outline: none;
   cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: 0px;
   background-color: #d8d8d8;
 }

@@ -61,12 +61,6 @@ class Chat extends Component {
 
     const {telephone, userName, errors} = this.state;
 
-    // const newMessage = {
-    //   authorId: this.props.authorId, //getAuthorId(),
-    //   text: messageText,
-    //   time: getCurrentTime(),
-    // };
-
     const {currentMessageText} = this.state;
 
     return (

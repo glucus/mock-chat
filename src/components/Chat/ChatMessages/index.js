@@ -5,7 +5,12 @@ const ChatMessages = ({messages}) => {
     <div className="chat__messages">
       {messages && messages.map(
         message => (
-          <div key={message.id} className="chat__messages__message">
+          <div key={message.id}
+               className={(message.authorId === 'operator') ?
+                 "chat__messages__operatorMessage"
+                 :
+                 "chat__messages__message"}
+          >
             <div className="message__text">
               {message.text}
             </div>

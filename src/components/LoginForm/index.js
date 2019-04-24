@@ -69,7 +69,7 @@ class LoginForm extends Component {
         } else if (userName.length < 1) {
             errors.userName = 'обязательное поле';
         }
-        console.log(errors);
+        // console.log(errors);
         return errors;
     };
 
