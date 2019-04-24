@@ -6,7 +6,10 @@ class LoginForm extends Component {
         this.state = {
             telephone: '',
             userName: '',
-            errors: null
+            isPristine: {
+                telephone: true,
+                userName: true
+            }
         };
     };
 
@@ -26,6 +29,17 @@ class LoginForm extends Component {
         })
     };
 
+    handleBlur = (e) => {
+        const field = e.target.name;
+
+        this.setState({
+            isPristine: {
+                ...this.state.isPristine,
+                [field]: false
+            }
+        })
+    };
+
 
     handlePhoneInput = (e) => {
         const value = e.target.value;
@@ -41,9 +55,23 @@ class LoginForm extends Component {
         }
     }
 
+    checkErrors = () => {
+        const {telephone, userName, isPristine} = this.state;
+
+        const errors = {};
+
+        if (!isPristine.telephone && telephone.length < 1) {
+            errors.telephone = 'обязательное поле';
+        } else if (!isPristine.userName && userName.length < 1) {
+            errors.userName = 'обязательное поле';
+        }
+        console.log(errors);
+        return errors;
+    };
+
     render (props) {
 
-        const {telephone, userName, errors} = this.state;
+        const {telephone, userName} = this.state;
 
         return (
             <div className="loginForm">
@@ -58,6 +86,7 @@ class LoginForm extends Component {
                                name="telephone"
                                placeholder="Номер телефона"
                                onChange={this.handlePhoneInput}
+                               onBlur={this.handleBlur}
                         />
                     </label>
                     <label htmlFor="userName">
@@ -68,11 +97,17 @@ class LoginForm extends Component {
                                name="userName"
                                placeholder="Ваше имя"
                                onChange={this.handleChange}
+                               onBlur={this.handleBlur}
                         />
                     </label>
                     <button type="submit"
-                            className={(errors === null) ? "loginForm_btn" : "loginForm_btn disabled"}
-                            disabled={(errors !== null)}
+                            className={
+                                (this.checkErrors() === {}) ?
+                                  "loginForm_btn"
+                                  :
+                                  "loginForm_btn disabled"
+                            }
+                            disabled={this.checkErrors() !== {}}
                     >
                         Готово
                     </button>
