@@ -5,6 +5,7 @@ import Chat from '../Chat';
 class Main extends Component {
 
   state = {
+    chatModalOpened: false,
     chatOpened: false
   };
 
@@ -20,15 +21,34 @@ class Main extends Component {
     })
   };
 
+  toggleChatModal = (e) => {
+    this.setState({
+      chatModalOpened: !this.state.chatModalOpened
+    })
+  };
+
   render() {
-    const {chatOpened} = this.state;
+    const {chatModalOpened, chatOpened} = this.state;
 
     return (
-      <div className="chat">
-        <Chat chatOpened={chatOpened}
-              closeChat={this.closeChat}
-        />
-        {!chatOpened && <LoginForm onLoginSubmit={this.openChat} />}
+      <div>
+        <div className="chat__header" onClick={this.toggleChatModal}>
+          <div className="chat__header__text">
+            Онлайн чат с поддержкой
+          </div>
+          {chatModalOpened && <button className="chat__closeButton"
+                  onClick={this.props.closeChat}>
+            X
+          </button>}
+        </div>
+        {chatModalOpened &&
+        <div className="chat">
+          <Chat chatOpened={chatOpened}
+                closeChat={this.closeChat}
+          />
+          {!chatOpened && <LoginForm onLoginSubmit={this.openChat}/>}
+        </div>
+        }
       </div>
     );
   }
