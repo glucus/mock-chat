@@ -34,6 +34,9 @@
 
 .loginForm {
   padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .loginForm__heading {
@@ -117,7 +120,7 @@
 }
 
 .chat__header {
-  width: 580px;
+  max-width: 580px;
   margin: 0 auto;
   padding: 10px;
   display: flex;
