@@ -57,14 +57,13 @@ class LoginForm extends Component {
         }
     }
 
-    checkErrors = () => {
-        const {telephone, userName, isPristine} = this.state;
+    checkErrors = ({telephone, userName}) => {
 
         const errors = {};
 
-        if (!isPristine.telephone && telephone.length < 1) {
+        if (telephone.length < 1) {
             errors.telephone = 'обязательное поле';
-        } else if (!isPristine.userName && userName.length < 1) {
+        } else if (userName.length < 1) {
             errors.userName = 'обязательное поле';
         }
         console.log(errors);
@@ -74,6 +73,8 @@ class LoginForm extends Component {
     render (props) {
 
         const {telephone, userName} = this.state;
+
+        const errors = this.checkErrors({telephone, userName});
 
         return (
             <div className="loginForm">
@@ -103,13 +104,11 @@ class LoginForm extends Component {
                         />
                     </label>
                     <button type="submit"
-                            className={
-                                (this.checkErrors() === {}) ?
-                                  "loginForm_btn"
-                                  :
+                            className={(errors === {}) ?
+                                  "loginForm_btn" :
                                   "loginForm_btn disabled"
                             }
-                            disabled={this.checkErrors() !== {}}
+                            disabled={ errors !== {}}
                     >
                         Готово
                     </button>
