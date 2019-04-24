@@ -71,9 +71,16 @@ class Chat extends Component {
 
     return (
       <div>
-        <ChatMessages messages={this.state.messages}/>
-        <form className="chat__currentMessage">
-          <label htmlFor="currentMessage">
+        {
+          this.props.chatOpened ?
+            <div>
+              <button className="chat__closeButton"
+                      onClick={this.props.closeChat}>
+                X
+              </button>
+              <ChatMessages messages={this.state.messages}/>
+              <form className="chat__currentMessage">
+                <label htmlFor="currentMessage">
             <textarea
               rows={1}
               maxLength={300}
@@ -86,8 +93,12 @@ class Chat extends Component {
             >
               {this.state.currentMessageText}
             </textarea>
-          </label>
-        </form>
+                </label>
+              </form>
+            </div>
+            :
+            <div className="chat__messages"/>
+        }
       </div>
     );
   }

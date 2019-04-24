@@ -95,3 +95,10 @@
   padding: 10px;
   width: 100%;
 }
+
+.chat__closeButton {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #d8d8d8;
+}

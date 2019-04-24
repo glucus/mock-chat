@@ -31,11 +31,10 @@ class Main extends Component {
 
     return (
       <div className="chat">
-        {chatOpened ?
-          <Chat /> :
-          <div className="chat__messages"/>
-        }
-        <LoginForm onLoginSubmit={this.openChat} />
+        <Chat chatOpened={chatOpened}
+              closeChat={this.closeChat}
+        />
+        {!chatOpened && <LoginForm onLoginSubmit={this.openChat} />}
       </div>
     );
   }
