@@ -32,6 +32,8 @@ class LoginForm extends Component {
     handleBlur = (e) => {
         const field = e.target.name;
 
+        console.log('blurred', field);
+
         this.setState({
             isPristine: {
                 ...this.state.isPristine,
