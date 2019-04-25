@@ -32,15 +32,11 @@ class Main extends Component {
 
     return (
       <div>
-        <div className="chat__header" onClick={this.toggleChatModal}>
-          <div className="chat__header__text">
+        {!chatModalOpened && <div className="chat__toggle" onClick={this.toggleChatModal}>
+          <div className="chat__toggle__text">
             Онлайн чат с поддержкой
           </div>
-          {chatModalOpened && <button className="chat__closeButton"
-                  onClick={this.props.closeChat}>
-            X
-          </button>}
-        </div>
+        </div>}
         {chatModalOpened &&
         <div className="chat">
           <Chat chatOpened={chatOpened}

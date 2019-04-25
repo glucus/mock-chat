@@ -2,35 +2,105 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+/* --- */
+
+.container {
+  padding-top: 100px;
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (min-width: 1201px) {
+  .container {
+    max-width: 600px;
+  }
+}
+
+/* ---- */
+
+.chat__toggle {
+  padding: 10px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  border: 1px solid #d8d8d8;;
 }
 
-.App-link {
-  color: #61dafb;
+.chat__toggle__text {
+  text-align: center;
+  color: #34aaf2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ---- */
+
+.chat {
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
+
+/* ---- */
+
+.chat__header {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.chat__header__text {
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+
+
+.chat__closeButton {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #00b956;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+/* ---- */
+
+.chat__messages {
+  padding: 20px;
+  background-color: #d8d8d8;
+  height: 300px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}
+
+.chat__messages__message {
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.chat__messages__operatorMessage {
+  margin-bottom: 10px;
+  text-align: left;
+  color: #00b956;
+}
+
+.message__text {
+  display: inline-block;
+  padding: 5px 20px;
+  background-color: #fff;
+  border-radius: 1em;
+  min-height: 18px;
+}
+
+.chat__currentMessage textarea {
+  width: 100%;
+  max-width: 560px;
+  padding: 10px;
+}
+
+/* ---- */
 
 .loginForm {
   padding: 10px;
@@ -46,13 +116,13 @@
 }
 
 .loginForm input {
-   width: 180px;
-   font-size: 14px;
-   padding: 14px;
+  width: 180px;
+  font-size: 14px;
+  padding: 14px;
 
-   margin-right: 8px;
-   margin-bottom: 4px;
- }
+  margin-right: 8px;
+  margin-bottom: 4px;
+}
 
 .loginForm_btn {
   /*width: 180px;*/
@@ -80,64 +150,3 @@
   background-color: #d8d8d8;
 }
 
-/* --- */
-
-.chat {
-  max-width: 600px;
-  margin: 0 auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-.chat__messages {
-  padding: 20px;
-  background-color: #d8d8d8;
-  height: 300px;
-  overflow-y: scroll;
-  margin-bottom: 10px;
-}
-
-.chat__messages__message {
-  margin-bottom: 10px;
-  text-align: right;
-}
-
-.chat__messages__operatorMessage {
-  margin-bottom: 10px;
-  text-align: left;
-  color: #00b956;
-}
-
-.message__text {
-  display: inline-block;
-  padding: 5px 20px;
-  background-color: #fff;
-  border-radius: 1em;
-}
-
-.chat__currentMessage textarea {
-  width: 100%;
-  max-width: 560px;
-  padding: 10px;
-}
-
-.chat__header {
-  max-width: 580px;
-  margin: 0 auto;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.chat__header__text {
-  font-weight: bold;
-  text-align: center;
-  flex-grow: 1;
-}
-
-.chat__closeButton {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  color: #00b956;
-  font-weight: bold;
-}
