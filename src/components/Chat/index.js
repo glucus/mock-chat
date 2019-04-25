@@ -25,7 +25,6 @@ class Chat extends Component {
 
     handleKeyDown = (e) => {
         if (e.which === 13) {
-            // console.log('pressed Enter');
             e.preventDefault();
             this.sendMessage(this.state.currentMessageText);
         }
@@ -33,17 +32,15 @@ class Chat extends Component {
 
     sendMessage = (messageText) => {
         const authorId = this.props.authorId;
-        const time = Date.now(); // getCurrentTime();
+        // const time = getCurrentTime();
         const id = this.state.messages.length;
 
         const newMessage = {
             id: id,
             authorId: authorId,
-            text: messageText,
-            time: time,
+            text: messageText//,
+            // time: time,
         };
-
-        // console.log('newMessage', newMessage);
 
         if (newMessage.text.length > 0) {
             this.setState({
@@ -51,7 +48,6 @@ class Chat extends Component {
                 messages: [...this.state.messages, newMessage]
             });
         }
-        // console.log('new messages', this.state.messages);
     };
 
 
@@ -79,7 +75,7 @@ class Chat extends Component {
                         <ChatMessages messages={this.state.messages}/>
                         <div className="chat__footer">
                             <form className="chat__currentMessage">
-                                <textarea rows={1} maxLength={300}
+                                <textarea rows={1}
                                           value={currentMessageText}
                                           id="currentMessage"
                                           name="currentMessage"

@@ -5,6 +5,7 @@
 /* --- */
 
 .container {
+  width: 100%;
   padding-top: 100px;
   margin: 0 auto;
 }
@@ -55,7 +56,6 @@
   flex-grow: 1;
 }
 
-
 .chat__closeButton {
   border: none;
   outline: none;
@@ -72,7 +72,6 @@
   background-color: #d8d8d8;
   height: 300px;
   overflow-y: scroll;
-  margin-bottom: 10px;
 }
 
 .chat__messages__message {
@@ -94,9 +93,20 @@
   min-height: 18px;
 }
 
+/* --- */
+
+.chat__footer {
+  padding: 0;
+
+}
+
+.chat__currentMessage {
+  display: flex;
+}
+
 .chat__currentMessage textarea {
   width: 100%;
-  max-width: 560px;
+  border: 1px solid #d8d8d8;
   padding: 10px;
 }
 
@@ -122,6 +132,13 @@
 
   margin-right: 8px;
   margin-bottom: 4px;
+}
+
+@media (max-width: 600px) {
+  .loginForm input {
+    width: 100%;
+    margin: 0 auto 4px;
+  }
 }
 
 .loginForm_btn {
