@@ -148,11 +148,18 @@
 
   .loginForm {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+  }
+
+  .loginForm__form-group {
+    display: flex;
   }
 
   .loginForm input {
-    width: 100%;
+  }
+
+  .loginForm_btn {
+    align-self: flex-start;
   }
 }
 
