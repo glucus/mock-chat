@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 class LoginForm extends Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             telephone: '',
@@ -73,52 +73,52 @@ class LoginForm extends Component {
         return errors;
     };
 
-    render (props) {
+    render(props) {
 
         const {telephone, userName} = this.state;
 
         const errors = this.checkErrors({telephone, userName});
 
         return (
-            <div className="loginForm">
-                <form onSubmit={this.submitLoginForm}>
-                    <p className="loginForm__heading">
-                        Чтобы начать общение, введите свой номер телефона и имя
-                    </p>
-                    <label htmlFor="telephone">
-                        <input type="tel"
-                               value={telephone}
-                               id="telephone"
-                               name="telephone"
-                               placeholder="Номер телефона"
-                               onChange={this.handlePhoneInput}
-                               onBlur={this.handleBlur}
-                               required
-                        />
-                    </label>
-                    <label htmlFor="userName">
-                        <input type="text"
-                               maxLength={30}
-                               value={userName}
-                               id="userName"
-                               name="userName"
-                               placeholder="Ваше имя"
-                               onChange={this.handleChange}
-                               onBlur={this.handleBlur}
-                               required
-                        />
-                    </label>
+            <form className="loginForm" onSubmit={this.submitLoginForm}>
+                <p className="loginForm__heading">
+                    Чтобы начать общение, введите свой номер телефона и имя
+                </p>
+                <div className="loginForm__form-group">
+                    <input type="tel"
+                           value={telephone}
+                           id="telephone"
+                           name="telephone"
+                           placeholder="Номер телефона"
+                           onChange={this.handlePhoneInput}
+                           onBlur={this.handleBlur}
+                           required
+                    />
+                </div>
+                <div className="loginForm__form-group">
+                    <input type="text"
+                           maxLength={30}
+                           value={userName}
+                           id="userName"
+                           name="userName"
+                           placeholder="Ваше имя"
+                           onChange={this.handleChange}
+                           onBlur={this.handleBlur}
+                           required
+                    />
+                </div>
+                <div className="loginForm__form-group">
                     <button type="submit"
-                            className={((errors.userName !=='') || (errors.telephone !== '')) ?
-                                  "loginForm_btn disabled" :
-                                  "loginForm_btn"
+                            className={((errors.userName !== '') || (errors.telephone !== '')) ?
+                                "loginForm_btn disabled" :
+                                "loginForm_btn"
                             }
-                            disabled={(errors.userName !=='') || (errors.telephone !== '')}
+                            disabled={(errors.userName !== '') || (errors.telephone !== '')}
                     >
                         Готово
                     </button>
-                </form>
-            </div>
+                </div>
+            </form>
         );
     }
 }

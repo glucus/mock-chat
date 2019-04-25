@@ -43,8 +43,7 @@ class Main extends Component {
                 closeChat={this.closeChat}
           />
           {!chatOpened && <LoginForm onLoginSubmit={this.openChat}/>}
-        </div>
-        }
+        </div>}
       </div>
     );
   }
