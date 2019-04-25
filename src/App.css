@@ -6,10 +6,11 @@
 
 .container {
   width: 100%;
+  max-width: 600px;
   padding-top: 100px;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 
 @media (min-width: 1201px) {
@@ -36,7 +37,6 @@
 /* ---- */
 
 .chat {
-  max-width: 600px;
   margin: 0;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
